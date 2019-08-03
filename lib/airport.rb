@@ -9,7 +9,7 @@ class Airport
   def land(plane)
     raise 'Stormy weather' if stormy?
     raise 'Airport at full capacity' if full?
-    @fleet << plane
+    store(plane)
   end
 
   def take_off(plane)
@@ -18,11 +18,17 @@ class Airport
 
   private
 
+  attr_reader :fleet, :capacity, :weather_forecast
+
+  def store(plane)
+    fleet << plane
+  end
+
   def full?
-    @fleet.size >= @capacity
+    fleet.size >= capacity
   end
 
   def stormy?
-    @weather_forecast.stormy?
+    weather_forecast.stormy?
   end
 end
