@@ -1,12 +1,12 @@
 class Airport
   def initialize(capacity)
     @capacity = capacity
-    @hangar = []
+    @fleet = []
   end
 
   def land(plane)
     raise 'Airport at full capacity' if full?
-    @hangar << plane
+    @fleet << plane
   end
 
   def take_off(plane)
@@ -16,7 +16,7 @@ class Airport
   private
 
   def full?
-    @hangar.size >= @capacity
+    @fleet.size >= @capacity
   end
 
   def stormy?
