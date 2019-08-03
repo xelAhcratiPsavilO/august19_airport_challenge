@@ -2,7 +2,7 @@ require 'airport'
 
 describe Airport do
 
-  subject(:airport) { described_class.new(20, weather_forecast) }
+  subject(:airport) { described_class.new(weather_forecast) }
   let(:plane) { double :plane }
   let(:weather_forecast) { double :weather_forecast }
 
@@ -19,7 +19,7 @@ describe Airport do
     context 'when not stormy, but full' do
       before do
         allow(weather_forecast).to receive(:stormy?).and_return false
-        20.times do
+        described_class::DEFAULT_CAPACITY.times do
           airport.land(plane)
         end
       end
