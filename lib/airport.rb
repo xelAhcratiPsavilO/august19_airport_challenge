@@ -1,5 +1,4 @@
 class Airport
-
   def initialize(capacity)
     @capacity = capacity
     @hangar = []
@@ -11,7 +10,7 @@ class Airport
   end
 
   def take_off(plane)
-
+    raise 'Stormy wheather' if stormy?
   end
 
   private
@@ -20,4 +19,7 @@ class Airport
     @hangar.size >= @capacity
   end
 
+  def stormy?
+    rand(1..3) > 2
+  end
 end
