@@ -13,7 +13,7 @@ describe Airport do
     end
 
     it 'raises an error when hangar is at full capacity' do
-      plane = Plane.new
+      plane = double :plane
       20.times do
         airport.land(plane)
       end
