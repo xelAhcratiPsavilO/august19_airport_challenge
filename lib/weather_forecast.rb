@@ -1,3 +1,3 @@
-class Weather_forecast
-  
+class WeatherForecast
+
 end

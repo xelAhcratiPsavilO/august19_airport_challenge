@@ -1,5 +1,5 @@
 require 'weather_forecast'
 
-describe Weather_forecast do
+describe WeatherForecast do
   subject(:weather_forecast) { described_class.new }
 end
